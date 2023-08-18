@@ -1,0 +1,19 @@
+
+<h1>Hello, create your new list</h1>
+
+<%= form_for @list do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Create List" %>
+<% end %>
+
+<h2>Here are your lists  </h2>
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= list.name %>
+      <%= link_to "View List", list_path(list) %>
+    </li>
+  <% end %>
+</ul>

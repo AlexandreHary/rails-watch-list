@@ -1,0 +1,11 @@
+<ul>
+  <% @movies.each do |movie| %>
+    <li>
+      <%= movie.title %>
+      <%= movie.overwiew %>
+      <%= movie.poster_url %>
+      <%= movie.rating %>
+      <%= movie.submit %>
+    </li>
+  <% end %>
+</ul>

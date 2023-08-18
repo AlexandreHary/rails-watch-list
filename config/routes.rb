@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'lists#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :lists, only: %i[show new create index] do
+    resources :bookmarks, only: %i[new create]
+  end
 end
+# nester la route bookmarks pour récupérer l'id de la liste = http/lists/1/bookmarks
